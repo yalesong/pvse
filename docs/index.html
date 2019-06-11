@@ -24,6 +24,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!--
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
@@ -42,6 +43,7 @@
           </li>
         </ul>
       </div>
+      -->
     </div>
   </nav>
 
@@ -50,14 +52,27 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h1 class="mt-5">Polysemous Visual-Semantic Embedding for Cross-Modal Retrieval</h1>
-        <p class="lead">Yale Song (Microsoft) and Mohammad Soleymani (USC ICT)</p>
-        <p class="lead">CVPR 2019</p>
-        <ul class="list-unstyled">
-        </ul>
+	<p class="lead">
+	  <a href="https://people.csail.mit.edu/yalesong">Yale Song</a> (Microsoft) and 
+	  <a href="http://people.ict.usc.edu/~soleymani/">Mohammad Soleymani</a> (USC ICT)
+	  <br>
+	  [<a href="https://arxiv.org/abs/1906.xxxxx">arXiv</a>] [<a href="">GitHub (code and data)</a>]
+	  <br>
+	  To appear in <i>CVPR 2019</i>
+	</p>
+    	<img src="img/pipeline.jpg" width="90%">
+	<p class="text-center"><i>Figure 1. An architecture of Polysemous Visual-Semantic Embedding (PVSE) for video-text data.</i><p>
+	<p class="lead">Most existing instance embedding methods are <i>injective</i>, i.e., they map an instance to a single point in the embedding space. Unfortunately, injective embedding cannot effectively handle <i>polysemous</i> instances with multiple meanings; at best, it would find an average representation of different meanings. In this work, we introduce Polysemous Instance Embedding Networks (PIE-Nets) that compute multiple and diverse representations of an instance by combining global context with different local information. To learn visual-semantic embedding, we tie-up two PIE-Nets and optimize them jointly in the multiple instance learning framework.</p>
       </div>
     </div>
   </div>
 
+  <hr>
+  
+  <hr>
+  <div class="container">
+    <img src="img/thumbnail-1600px.jpg" width="90%">
+  </div>
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.slim.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
