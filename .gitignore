@@ -8,7 +8,9 @@ __pycache__/
 
 # vim
 *.swp
-node_modules/
+
+# node
+docs/node_modules/
 
 # Distribution / packaging
 .Python
