@@ -30,10 +30,11 @@
     },
     "dependencies": {
         "bootstrap": "4.3.1",
-        "jquery": "3.4.1"
+        "jquery": "3.4.1",
+        "axios": "0.18.1"
     },
     "devDependencies": {
-        "browser-sync": "2.26.5",
+        "browser-sync": "^2.26.7",
         "del": "^4.1.1",
         "gulp": "4.0.2",
         "merge-stream": "^1.0.1"
