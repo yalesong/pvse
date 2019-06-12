@@ -395,9 +395,9 @@ h6, .h6 {
   font-weight: 300;
 }
 
-.abstract{
-  text-align: justify;
-  width: 80%;
+.sublead {
+  font-size: 1rem;
+  font-weight: 200;
 }
 
 .display-1 {

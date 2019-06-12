@@ -11,7 +11,7 @@
   <title>Polysemous Visual-Semantic Embedding for Cross-Modal Retrieval (CVPR 2019)</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -87,19 +87,55 @@
   <hr>
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 text-center">
-	<h5>Image-Sentence Cross-Retrieval Results on MS-COCO</h2>
-
+      <div class="col-lg-12 text-center mt-3">
+        <h5>My Reaction When (MRW) Dataset</h5>
+	<center><p style="text-align: justify; witdh: 80%">Our My Reaction When (MRW) dataset contains 50,107 video-sentence pairs crawled from social media, where videos display physical or emotional reactions to the situations described in sentences. The subreddit <a href="https://www.reddit.com/r/reactiongifs/">/r/reactiongifs</a> contains several examples; below shows some representative examples.</p></center>
+      <table class="table-bordered"> 
+        <tr>
+	  <td width="25%"><b>(a) Physical Reaction</b></td>
+	  <td width="25%"><b>(b) Emotional Reaction</b></td>
+	  <td width="25%"><b>(c) Animal Reaction</b></td>
+	  <td width="25%"><b>(d) Lexical Reaction (caption)</b></td>
+	</tr>
+	<tr>
+	  <td>MRW a witty comment I wanted to make was already said	</td>
+	  <td>MFW I see a cute girl on Facebook change her status to single	</td>
+	  <td>MFW I cant remember if I've locked my front door	</td>
+	  <td>MRW a family member askes me why his computer isn't working
+	  </td>
+	</tr>
+	<tr>
+	  <td><img src="https://media3.giphy.com/media/lJ1Q5fkkPAk6I/giphy.gif" width="100%"></td>
+	  <td><img src="https://media3.giphy.com/media/Fm4CLHkaS8Vfq/giphy.gif" width="100%"></td>
+	  <td><img src="https://media3.giphy.com/media/xvL8BAAQzXBn2/giphy.gif" width="100%"></td>
+	  <td><img src="https://media3.giphy.com/media/W1Wruy7fCB7fG/giphy.gif" width="100%"></td>
+        </tr>
+      </table>
       </div>
     </div>
   </div>
-
 
   <hr>
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-         
+	<h5 class="mt-4">Image-Sentence Cross-Retrieval Results on MS-COCO</h2>
+	<img src="img/results_coco.png" width="90%">
+	<h5 class="mt-4">Video-Sentence Cross-Retrieval Results on TGIF</h2>
+	<img src="img/results_tgif.png" width="80%">
+	<h5 class="mt-4">Video-Sentence Cross-Retrieval Results on MRW</h2>
+	<img src="img/results_mrw.png" width="80%">
+	</br>
+	</br>
+	<p class="text-center"><i>Note: Since our CVPR 2019 camera-ready, we've improved performance on TGIF and MRW by modifying the data augmentation logic for video data. The new results are reflected in our <a href="http://arxiv.org/abs/1906.04402">arxiv version</a>.</i></p> 
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
       </div>
     </div>
   </div>
