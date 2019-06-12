@@ -58,21 +58,20 @@
 	  <a href="http://people.ict.usc.edu/~soleymani/">Mohammad Soleymani</a> (USC ICT)
 	  <br>
 	  To appear in <i>CVPR 2019</i>
-	  <br><br>
-	  [<a href="http://arxiv.org/abs/1906.04402">arXiv</a>] 
-	  [<a href="https://github.com/yalesong/pvse">GitHub</a>]
+	</p>
+	<p class="lead">
+	  [<a href="http://arxiv.org/abs/1906.04402">arXiv</a>],
+	  [<a href="https://github.com/yalesong/pvse">GitHub</a>] (coming soon)
+	  <br><img src="img/thumbnail-1600px.jpg" width="90%">
 	</p>
       </div>
     </div>
   </div>
 
-  <br>
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 text-center">
-    	<img src="img/pipeline.jpg" width="90%">
-	<p class="text-center"><i>Figure 1. An architecture of Polysemous Visual-Semantic Embedding (PVSE) for video-text data.</i><p>
-	<h5>TL; DR</h2>
+      <div class="col-lg-12 text-center mt-3">
+	<h5>tl; dr</h2>
         <ul class="list-inline-item" style="text-align: left; width: 90%">
 	<li>Most existing instance embedding methods are <i>injective</i>, maping an instance to a single point in the embedding space. Unfortunately, they cannot effectively handle <i>polysemous</i> instances with multiple meanings; at best, it would find an average representation of different meanings.</li>
 	<li>We introduce <b>Polysemous Instance Embedding Networks (PIE-Nets)</b> that compute <i>multiple</i> and <i>diverse</i> representations of an instance. Each representation encodes global context and different local information, combined via residual learning.</li>
@@ -83,34 +82,53 @@
       </div>
     </div>
   </div>
+  
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center mt-3">
+        <h4>Polysemous Visual-Semantic Embedding</h4>
+    	<img class="mt-3" src="img/pipeline.jpg" width="90%">
+	<!--<p class="text-center"><i>Figure 1. An architecture of Polysemous Visual-Semantic Embedding (PVSE) for video-text data.</i><p>-->
+        <ul class="list-inline-item mt-4" style="text-align: left; width: 90%">
+	<li><b>Feature extractor</b>: We use well-known encoders for different modalities, e.g., CNN, RNN, GloVe. We just require that each encoder computes both local and global representation of an instance. Local representation could capture, e.g., spatial region in an image, temporal slice (frame) in a video, and words in a sentence.</li>
+	<li><b>PIE-Net</B>: The local and global representations are passed to the PIE-Net, which computes K embeddings that focus on different local parts of an instance. The PIE-Net uses multi-head self-attention to extract K locally-guided representations and combines each with global representation via residual learning. Each modality gets its own PIE-Net; parameters are not shared.</li>
+	<li><b>Learning objective</b>: We train the model in the multiple instance learning framework. The rationale is that when a pair of instances have weak/ambiguous association it is too restrictive to enforce one-to-one alignment. We instead use the MIL objective to allow for a loose alignment by requiring at least one pair among K x K instance embeddings to be aligned. </li>
+	</ul>
+      </div>
+    </div>
+  </div>
 
   <hr>
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center mt-3">
-        <h5>My Reaction When (MRW) Dataset</h5>
-	<center><p style="text-align: justify; witdh: 80%">Our My Reaction When (MRW) dataset contains 50,107 video-sentence pairs crawled from social media, where videos display physical or emotional reactions to the situations described in sentences. The subreddit <a href="https://www.reddit.com/r/reactiongifs/">/r/reactiongifs</a> contains several examples; below shows some representative examples.</p></center>
-      <table class="table-bordered"> 
-        <tr>
-	  <td width="25%"><b>(a) Physical Reaction</b></td>
-	  <td width="25%"><b>(b) Emotional Reaction</b></td>
-	  <td width="25%"><b>(c) Animal Reaction</b></td>
-	  <td width="25%"><b>(d) Lexical Reaction (caption)</b></td>
-	</tr>
-	<tr>
-	  <td>MRW a witty comment I wanted to make was already said	</td>
-	  <td>MFW I see a cute girl on Facebook change her status to single	</td>
-	  <td>MFW I cant remember if I've locked my front door	</td>
-	  <td>MRW a family member askes me why his computer isn't working
-	  </td>
-	</tr>
-	<tr>
-	  <td><img src="https://media3.giphy.com/media/lJ1Q5fkkPAk6I/giphy.gif" width="100%"></td>
-	  <td><img src="https://media3.giphy.com/media/Fm4CLHkaS8Vfq/giphy.gif" width="100%"></td>
-	  <td><img src="https://media3.giphy.com/media/xvL8BAAQzXBn2/giphy.gif" width="100%"></td>
-	  <td><img src="https://media3.giphy.com/media/W1Wruy7fCB7fG/giphy.gif" width="100%"></td>
-        </tr>
-      </table>
+        <h4>My Reaction When (MRW) Dataset</h4>
+	<center><p class="mt-3" style="text-align; justify; width: 100%">
+	  The My Reaction When (MRW) dataset contains 50,107 video-sentence pairs crawled from social media, where videos display physical or emotional reactions to the situations described in sentences. The subreddit <a href="https://www.reddit.com/r/reactiongifs/">/r/reactiongifs</a> contains several examples; below shows some representative examples.
+	</p></center>
+        <table class="table-bordered mt-4"> 
+          <tr>
+	    <td width="25%"><b>(a) Physical Reaction</b></td>
+	    <td width="25%"><b>(b) Emotional Reaction</b></td>
+	    <td width="25%"><b>(c) Animal Reaction</b></td>
+	    <td width="25%"><b>(d) Lexical Reaction (caption)</b></td>
+	  </tr>
+	  <tr>
+	    <td>MRW a witty comment I wanted to make was already said	</td>
+	    <td>MFW I see a cute girl on Facebook change her status to single	</td>
+	    <td>MFW I cant remember if I've locked my front door	</td>
+	    <td>MRW a family member askes me why his computer isn't working
+	    </td>
+	  </tr>
+	  <tr>
+	    <td><img src="https://media3.giphy.com/media/lJ1Q5fkkPAk6I/giphy.gif" width="100%"></td>
+	    <td><img src="https://media3.giphy.com/media/Fm4CLHkaS8Vfq/giphy.gif" width="100%"></td>
+	    <td><img src="https://media3.giphy.com/media/xvL8BAAQzXBn2/giphy.gif" width="100%"></td>
+  	    <td><img src="https://media3.giphy.com/media/W1Wruy7fCB7fG/giphy.gif" width="100%"></td>
+          </tr>
+        </table>
+	<center><p class="mt-3" style="text-align; justify; width: 100%">We split the data into train (44,107 pairs), validation (1,000 pairs), and test (5,000) sets. The dataset and scripts to prepare the data will become available at our <a href="https://github.com/yalesong/pvse">GitHub page</a> soon (pending approval). In the meantime, you may download the dataset at <a href="https://people.csail.mit.edu/yalesong/mrw/mrw-v1.0.tar.gz">here</a> (metadata only) </p></center>
       </div>
     </div>
   </div>
@@ -119,15 +137,14 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
+        <h4>Experimental Results</h4>
+	<p><i>Note: Since our CVPR 2019 camera-ready, we've improved the performance on TGIF and MRW by modifying the data augmentation logic for video data. <br>The new results are reflected in our <a href="http://arxiv.org/abs/1906.04402">arxiv version</a>.</i></p> 
 	<h5 class="mt-4">Image-Sentence Cross-Retrieval Results on MS-COCO</h2>
 	<img src="img/results_coco.png" width="90%">
 	<h5 class="mt-4">Video-Sentence Cross-Retrieval Results on TGIF</h2>
 	<img src="img/results_tgif.png" width="80%">
 	<h5 class="mt-4">Video-Sentence Cross-Retrieval Results on MRW</h2>
 	<img src="img/results_mrw.png" width="80%">
-	</br>
-	</br>
-	<p class="text-center"><i>Note: Since our CVPR 2019 camera-ready, we've improved performance on TGIF and MRW by modifying the data augmentation logic for video data. The new results are reflected in our <a href="http://arxiv.org/abs/1906.04402">arxiv version</a>.</i></p> 
       </div>
     </div>
   </div>
@@ -142,7 +159,6 @@
 
   <hr>
   <div class="container">
-    <img src="img/thumbnail-1600px.jpg" width="90%">
   </div>
 
   <!-- Bootstrap core JavaScript -->
