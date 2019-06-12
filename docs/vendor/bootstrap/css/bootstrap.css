@@ -395,6 +395,11 @@ h6, .h6 {
   font-weight: 300;
 }
 
+.abstract{
+  text-align: justify;
+  width: 80%;
+}
+
 .display-1 {
   font-size: 6rem;
   font-weight: 300;
@@ -9955,6 +9960,20 @@ a.text-dark:hover, a.text-dark:focus {
 
 .invisible {
   visibility: hidden !important;
+}
+
+.vertical{
+  writing-mode:tb-rl;
+  -webkit-transform:rotate(90deg);
+  -moz-transform:rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform:rotate(90deg);
+  transform: rotate(90deg);
+  white-space:nowrap;
+  display:block;
+  bottom:0;
+  width:20px;
+  height:20px;
 }
 
 @media print {
