@@ -20,7 +20,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">PVSE</a>
+      <a class="navbar-brand" href="#">PVSE - CVPR 2019</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -62,7 +62,7 @@
 	<p class="lead">
 	  [<a href="http://arxiv.org/abs/1906.04402">arXiv</a>],
 	  [<a href="https://github.com/yalesong/pvse">GitHub</a>] (coming soon)
-	  <br><img src="img/thumbnail-1600px.jpg" width="90%">
+	  <img class="mt-4" src="img/thumbnail-1600px.jpg" width="90%">
 	</p>
       </div>
     </div>
@@ -104,7 +104,7 @@
     <div class="row">
       <div class="col-lg-12 text-center mt-3">
         <h4>My Reaction When (MRW) Dataset</h4>
-	<center><p class="mt-3" style="text-align; justify; width: 100%">
+	<center><p class="mt-3" style="text-align: justify; width: 100%">
 	  The My Reaction When (MRW) dataset contains 50,107 video-sentence pairs crawled from social media, where videos display physical or emotional reactions to the situations described in sentences. The subreddit <a href="https://www.reddit.com/r/reactiongifs/">/r/reactiongifs</a> contains several examples; below shows some representative examples.
 	</p></center>
         <table class="table-bordered mt-4"> 
@@ -128,7 +128,7 @@
   	    <td><img src="https://media3.giphy.com/media/W1Wruy7fCB7fG/giphy.gif" width="100%"></td>
           </tr>
         </table>
-	<center><p class="mt-3" style="text-align; justify; width: 100%">We split the data into train (44,107 pairs), validation (1,000 pairs), and test (5,000) sets. The dataset and scripts to prepare the data will become available at our <a href="https://github.com/yalesong/pvse">GitHub page</a> soon (pending approval). In the meantime, you may download the dataset at <a href="https://people.csail.mit.edu/yalesong/mrw/mrw-v1.0.tar.gz">here</a> (metadata only) </p></center>
+	<center><p class="mt-3" style="text-align: justify; width: 100%">We split the data into train (44,107 pairs), validation (1,000 pairs), and test (5,000) sets. The dataset and scripts to prepare the data will become available at our <a href="https://github.com/yalesong/pvse">GitHub page</a> soon (pending approval). In the meantime, you may download the dataset at <a href="https://people.csail.mit.edu/yalesong/mrw/mrw-v1.0.tar.gz">here</a> (metadata only) </p></center>
       </div>
     </div>
   </div>
@@ -136,30 +136,172 @@
   <hr>
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 text-center">
+      <div class="col-lg-12 text-center mt-3">
+        <h4>Qualitative Results: Image-to-Sentence Retrieval on MS-COCO</h4>
+	<center><p class="mt-3" style="text-align: justify; width: 100%">
+	Below, for each query image we show three visual attention maps and their top-ranked text retrieval results, along with their ranks and cosine similarity scores (green: correct, red: incorrect). Words in each sentence is color-coded with textual attention intensity, using the color map shown at the top.
+	</p></center>
+	<img src="img/qualitative_coco.png" width="90%">
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center mt-3">
+        <h4>Qualitative Results: Video-to-Sentence Retrieval on TGIF</h4>
+	<center><p class="mt-3" style="text-align: justify; width: 100%">
+	For each query video we show three visual attention maps and their top-ranked text retrieval results, along with their ranks and cosine similarity scores (green: correct, red: incorrect). Words in each sentence is color-coded with textual attention intensity.
+	</p></center>
+	<img src="img/qualitative_tgif.png" width="90%">
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center mt-3">
+        <h4>Qualitative Results: Sentence-to-Video (GIF) Retrieval on MRW</h4>
+	<center><p class="mt-3" style="text-align: justify; width: 100%">
+	For each query sentence we show top five retrieved videos and cosine similarity scores. <i>Quiz</i>: We encourage the readers to find the best matching video in each set of results; see our <a href="https://arxiv.org/pdf/1906.04402.pdf">paper (page 11)</a> for the answers.
+	</p></center>
+
+	<table class="table-bordered">
+
+	  <tr><td colspan="5">(a) MRW I accidentally close the Reddit tab when I am 20 pages deep</td></tr>
+	  <tr>
+	    <td>Rank 1 (0.76)</td>
+	    <td>Rank 2 (0.74)</td>
+	    <td>Rank 3 (0.72)</td>
+	    <td>Rank 4 (0.72)</td>
+	    <td>Rank 5 (0.70)</td>
+	  </tr>
+	  <tr>
+	    <td width="20%"><img src="https://media1.giphy.com/media/4vHEzQTFLdZkc/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="http://media3.giphy.com/media/noivCR72nUsRa/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="http://media3.giphy.com/media/FZfOJQf7y33Fu/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media3.giphy.com/media/KA3Kz3UkNx4EU/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media1.giphy.com/media/11gjR1DYtgAnwA/giphy.gif" width="200" height="200"></td>
+	  </tr>
+
+	  <tr><td colspan="5">(b) MRW there is food in the house and cannot eat it</td></tr>
+	  <tr>
+	    <td>Rank 1 (0.87)</td>
+	    <td>Rank 2 (0.86)</td>
+	    <td>Rank 3 (0.84)</td>
+	    <td>Rank 4 (0.83)</td>
+	    <td>Rank 5 (0.82)</td>
+	  </tr>
+	  <tr>
+	    <td width="20%"><img src="https://media3.giphy.com/media/vaWNckItMLyve/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media1.giphy.com/media/6FuWdniJgiCYg/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media0.giphy.com/media/NiAUbv3OKxojK/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media2.giphy.com/media/fi6HPJATGS15S/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media2.giphy.com/media/roSgjiIoJx9FC/giphy.gif" width="200" height="200"></td>
+	  </tr>
+
+	  <tr><td colspan="5">(c) My reaction when I hear a song on the radio that I absolutely hate</td></tr>
+	  <tr>
+	    <td>Rank 1 (0.76)</td>
+	    <td>Rank 2 (0.74)</td>
+	    <td>Rank 3 (0.72)</td>
+	    <td>Rank 4 (0.72)</td>
+	    <td>Rank 5 (0.70)</td>
+	  </tr>
+	  <tr>
+	    <td width="20%"><img src="https://media0.giphy.com/media/dB4TO17UELCBG/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media0.giphy.com/media/eQT7e19nkfwsg/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="http://media4.giphy.com/media/IWnY8pVhB9W1O/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media0.giphy.com/media/106OoD2lxKW4Eg/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="http://media3.giphy.com/media/XlR7SbNH3oqjK/giphy.gif" width="200" height="200"></td>
+	  </tr>
+
+	  <tr><td colspan="5">(d) HIFW I am drunk and singing at a Karaoke ba</td></tr>
+	  <tr>
+	    <td>Rank 1 (0.78)</td>
+	    <td>Rank 2 (0.75)</td>
+	    <td>Rank 3 (0.74)</td>
+	    <td>Rank 4 (0.73)</td>
+	    <td>Rank 5 (0.73)</td>
+	  </tr>
+	  <tr>
+	    <td width="20%"><img src="https://media2.giphy.com/media/hnTi59JZFyIvK/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="http://media3.giphy.com/media/qD0pQcMP4DLQ4/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="http://media1.giphy.com/media/EXWHEd87PyCQg/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="http://media4.giphy.com/media/VmDKOUjAnsqs/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="http://media1.giphy.com/media/dnGFs0eCKHhTy/giphy.gif" width="200" height="200"><td>
+	  </tr>
+
+	  <tr><td colspan="5">(e) MFW I post my first original content to imgur and it gets the shit down voted out of it</td></tr>
+	  <tr>
+	    <td>Rank 1 (0.94)</td>
+	    <td>Rank 2 (0.87)</td>
+	    <td>Rank 3 (0.86)</td>
+	    <td>Rank 4 (0.85)</td>
+	    <td>Rank 5 (0.77)</td>
+	  </tr>
+	  <tr>
+	    <td width="20%"><img src="https://media4.giphy.com/media/MNVZnrRibLfxe/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media0.giphy.com/media/mjPW86P87aLL2/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="http://media1.giphy.com/media/11mSk4iZ2eAjRu/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media2.giphy.com/media/X6SNAzJIZemFq/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media0.giphy.com/media/FtIwjRISsJHWM/giphy.gif" width="200" height="200"></td>
+	  </tr>
+
+	  <tr><td colspan="5">(f) MRW the car in front of me will not go when it is their turn</td></tr>
+	  <tr>
+	    <td>Rank 1 (0.84)</td>
+	    <td>Rank 2 (0.83)</td>
+	    <td>Rank 3 (0.80)</td>
+	    <td>Rank 4 (0.77)</td>
+	    <td>Rank 5 (0.75)</td>
+	  </tr>
+	  <tr>
+	    <td width="20%"><img src="http://media1.giphy.com/media/xYxrqIpps1Ja8/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media0.giphy.com/media/TSYJv1WA3QQ8M/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media2.giphy.com/media/op5UFNwyZFXhK/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="http://media3.giphy.com/media/k1qxOmVxBDKNO/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media2.giphy.com/media/K4dPph1EXpFQs/giphy.gif" width="200" height="200"></td>
+	  </tr>
+
+	  <tr><td colspan="5">(g) MRW I get drunk and challenge my SO to a dance off</td></tr>
+	  <tr>
+	    <td>Rank 1 (0.91)</td>
+	    <td>Rank 2 (0.90)</td>
+	    <td>Rank 3 (0.89)</td>
+	    <td>Rank 4 (0.88)</td>
+	    <td>Rank 5 (0.88)</td>
+	  </tr>
+	  <tr>
+	    <td width="20%"><img src="http://media0.giphy.com/media/NSrir9BtU6tJS/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media4.giphy.com/media/GZfMT3F2b3yyA/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="http://media4.giphy.com/media/xsr1jRofbvZ2U/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="https://media2.giphy.com/media/bX9eldZSpEKoE/giphy.gif" width="200" height="200"></td>
+	    <td width="20%"><img src="http://media0.giphy.com/media/11Z9rVbBvoGLSw/giphy.gif" width="200" height="200"></td>
+	  </tr>
+	</table>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center mt-3">
         <h4>Experimental Results</h4>
-	<p><i>Note: Since our CVPR 2019 camera-ready, we've improved the performance on TGIF and MRW by modifying the data augmentation logic for video data. <br>The new results are reflected in our <a href="http://arxiv.org/abs/1906.04402">arxiv version</a>.</i></p> 
-	<h5 class="mt-4">Image-Sentence Cross-Retrieval Results on MS-COCO</h2>
+	<h5 class="mt-4">(1) Image-Sentence Cross-Retrieval Results on MS-COCO</h2>
 	<img src="img/results_coco.png" width="90%">
-	<h5 class="mt-4">Video-Sentence Cross-Retrieval Results on TGIF</h2>
+	<h5 class="mt-4">(2) Video-Sentence Cross-Retrieval Results on TGIF</h2>
 	<img src="img/results_tgif.png" width="80%">
-	<h5 class="mt-4">Video-Sentence Cross-Retrieval Results on MRW</h2>
+	<h5 class="mt-4">(3) Video-Sentence Cross-Retrieval Results on MRW</h2>
 	<img src="img/results_mrw.png" width="80%">
+	<p class="mt-3" style="text-align: justify"><i>Note: Since our CVPR 2019 camera-ready, we've improved the performance on TGIF and MRW by modifying the data augmentation logic for video data. The new results are reflected in our <a href="http://arxiv.org/abs/1906.04402">arxiv version</a>.</i></p> 
       </div>
     </div>
   </div>
 
-  <hr>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-      </div>
-    </div>
-  </div>
-
-  <hr>
-  <div class="container">
-  </div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.slim.min.js"></script>
