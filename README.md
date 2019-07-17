@@ -63,7 +63,7 @@ This will download the dataset (without videos) in a JSON format, a vocabulary f
 ```
 Do you wish to download video data and gulp them? [y/n]
 ```
-We provide two ways to obtain the data. A recommended option is to download pre-compiled data in a [GulpIO](https://github.com/TwentyBN/GulpIO) binary storage format, which contains video frames sampled at 8 FPS. For this, simpliy hit `n` (this will terminate the script) and download our pre-compiled GulpIO data in [this link (54 GB)](https://drive.google.com/file/d/14hni_L2iN3_zsZ1KDkh21juWYCE0s13j). After finish downloading `mrw-v1.0-gulp.tar.gz`, extract the tarball under `data/mrw/gulp`.
+We provide two ways to obtain the data. A recommended option is to download pre-compiled data in a [GulpIO](https://github.com/TwentyBN/GulpIO) binary storage format, which contains video frames sampled at 8 FPS. For this, simpliy hit `n` (this will terminate the script) and download our pre-compiled GulpIO data in [this link (54 GB)](https://drive.google.com/file/d/14hni_L2iN3_zsZ1KDkh21juWYCE0s13j). After finish downloading, extract the tarball under `data/mrw/gulp` to train and/or test our models.
 
 If you wish to download raw video clips and gulp them on your own, hit `y` once prompted with the message above. This will start downloading videos and, once finished, start gulping the video files at 8 FPS (you can change this in [download_gulp_mrw.py](./data/mrw/download_gulp_mrw.py)). If you encounter any problem downloading the video files, you may also download them directly from [this link (19 GB)](https://drive.google.com/file/d/1Gcv4j-b2TkWLgSNF1Ye5zOa-LTG3mBcL), and then continue gulping them using the script [download_gulp_mrw.py](./data/mrw/download_gulp_mrw.py). 
 
