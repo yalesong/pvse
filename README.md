@@ -33,6 +33,7 @@ Below shows the descriptive statistics of the datset. The word vocabulary size i
 
 We provide detailed analysis of the dataset in the [supplementary material](https://arxiv.org/abs/1906.04402) of the main paper.
 
+Follow the instruction [below](#mrw) to download the dataset.
 
 ## Setting up an environment
 
