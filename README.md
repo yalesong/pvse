@@ -48,13 +48,7 @@ pip3 install -r requirements.txt
 
 ## Download and prepare data
 
-##### MS-COCO
-```
-cd data
-bash prepare_coco_dataset.sh
-```
-
-##### MRW
+### MRW
 ```
 cd data
 bash prepare_mrw_dataset.sh
@@ -69,7 +63,7 @@ If you wish to download raw video clips and gulp them on your own, hit `y` once 
 
 
 
-##### TGIF
+### TGIF
 ```
 cd data
 bash prepare_tgif_dataset.sh
@@ -85,6 +79,13 @@ Do you wish to gulp the data? [y/n]
 Similar to the MRW data, we provide two options to obtain the data: (1) download pre-compiled GulpIO data, or (2) download raw video clips and gulp them on your own, and we recommend the first option for an easy start. For this, simply hit `n` and download our pre-compiled GulpIO data in [this link (89 GB)](https://drive.google.com/file/d/1W2iXV9tWxKkYkTzOCvUMTQBkVPg_8mOf). After finish downloading `tgif-gulp.tar.gz`, extract the tarball under `data/tgif/gulp`.  
 
 If you wish to gulp your own dataset, hit `y` and follow the prompt. Note that you must first download a tarball containing the videos before gulping. You can download the file `tgif.tar.gz` (124 GB) from [this link](https://drive.google.com/open?id=0B15H16jpV4w2NHI2QmUxV21JdkE) and place it under `./data/tgif`. Once you have the video data, the script will start gulping the video files.
+
+
+### MS-COCO
+```
+cd data
+bash prepare_coco_dataset.sh
+```
 
 
 ## Evaluate pretrained models
