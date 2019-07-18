@@ -135,7 +135,7 @@ if __name__ == '__main__':
     verify_downloaded_videos(data, videos_dir)
       
     # GULP the dataset
-    for split in ['train', 'valid', 'test']:
+    for split in splits:
       print('Gulping from [{}] split of [{}]'.format(split, dataset_path))
       split_tsv = os.path.join(splits_dir, split+'.tsv')
       output_dir_split = output_dir + '/{}'.format(split)
