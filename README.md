@@ -2,6 +2,8 @@
 
 This repository contains a PyTorch implementation of the PVSE network and the MRW dataset proposed in our paper [*Polysemous Visual-Semantic Embedding for Cross-Modal Retrieval* (CVPR 2019)](https://arxiv.org/abs/1906.04402). The code and data are free to use for *academic purposes only*. 
 
+Please also visit our [project page](https://yalesong.github.io/pvse/)
+
 ![](assets/pvse.jpg)
 
 
