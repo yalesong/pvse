@@ -50,6 +50,7 @@ parser.add_argument('--weight_decay', default=0.0, type=float, help='Weight deca
 parser.add_argument('--lr', default=.0002, type=float, help='Initial learning rate')
 parser.add_argument('--ckpt', default='', type=str, metavar='PATH', help='path to latest ckpt (default: none)')
 parser.add_argument('--eval_on_gpu', action='store_true', help='Evaluate on GPU (default: CPU)')
+parser.add_argument('--legacy', action='store_true', help='Turn this on to reproduce results in CVPR2018 paper')
 
 
 def verify_input_args(args):

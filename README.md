@@ -96,18 +96,18 @@ Download all six pretrained models in a tarball at [this link](https://drive.goo
 
 | Dataset | Model | Command | 
 | ------- | ----- | ------- | 
-| COCO | PVSE (k=1) [[download]](https://drive.google.com/file/d/1NvHhATydJ94r2O48_m72tx028Jy17Mxl) | `python3 eval.py --data_name coco --num_embeds 1 --img_attention --txt_attention --ckpt ./ckpt/coco_pvse_k1.pth` | 
-| COCO | PVSE [[download]](https://drive.google.com/file/d/1cFePGpvhs4ypu7q2j1dDbgspBbBcD2z7) | `python3 eval.py --data_name coco --num_embeds 2 --img_attention --txt_attention --ckpt ./ckpt/coco_pvse.pth` | 
-| MRW | PVSE (k=1) [[download]](https://drive.google.com/file/d/1gkXfdhupyv10y1pMIsHm9XaanCo2ewUR) | `python3 eval.py --data_name mrw --num_embeds 1 --img_attention --txt_attention --max_video_length 4 --ckpt ./ckpt/mrw_pvse_k1.pth` | 
-| MRW | PVSE [[download]](https://drive.google.com/file/d/1k5VO_7OGfy7k9H4xg5GqtfBTMtNflgH-) | `python3 eval.py --data_name mrw --num_embeds 5 --img_attention --txt_attention --max_video_length 4 --ckpt ./ckpt/mrw_pvse.pth` | 
-| TGIF | PVSE (k=1) [[download]](https://drive.google.com/file/d/1FGDDrszmdzHn7gnLGbZqYlIbA1lTVymk) | `python3 eval.py --data_name tgif --num_embeds 1 --img_attention --txt_attention --max_video_length 8 --ckpt ./ckpt/tgif_pvse_k1.pth` |
-| TGIF | PVSE [[download]](https://drive.google.com/file/d/1BOhePBouPjdrd8o67avn7drWB5h1_YGI) | `python3 eval.py --data_name tgif --num_embeds 3 --img_attention --txt_attention --max_video_length 8 --ckpt ./ckpt/tgif_pvse.pth` |
+| COCO | PVSE (k=1) [[download]](https://drive.google.com/file/d/1NvHhATydJ94r2O48_m72tx028Jy17Mxl) | `python3 eval.py --data_name coco --num_embeds 1 --img_attention --txt_attention --legacy --ckpt ./ckpt/coco_pvse_k1.pth` | 
+| COCO | PVSE [[download]](https://drive.google.com/file/d/1cFePGpvhs4ypu7q2j1dDbgspBbBcD2z7) | `python3 eval.py --data_name coco --num_embeds 2 --img_attention --txt_attention --legacy --ckpt ./ckpt/coco_pvse.pth` | 
+| MRW | PVSE (k=1) [[download]](https://drive.google.com/file/d/1gkXfdhupyv10y1pMIsHm9XaanCo2ewUR) | `python3 eval.py --data_name mrw --num_embeds 1 --img_attention --txt_attention --max_video_length 4 --legacy --ckpt ./ckpt/mrw_pvse_k1.pth` | 
+| MRW | PVSE [[download]](https://drive.google.com/file/d/1k5VO_7OGfy7k9H4xg5GqtfBTMtNflgH-) | `python3 eval.py --data_name mrw --num_embeds 5 --img_attention --txt_attention --max_video_length 4 --legacy --ckpt ./ckpt/mrw_pvse.pth` | 
+| TGIF | PVSE (k=1) [[download]](https://drive.google.com/file/d/1FGDDrszmdzHn7gnLGbZqYlIbA1lTVymk) | `python3 eval.py --data_name tgif --num_embeds 1 --img_attention --txt_attention --max_video_length 8 --legacy --ckpt ./ckpt/tgif_pvse_k1.pth` |
+| TGIF | PVSE [[download]](https://drive.google.com/file/d/1BOhePBouPjdrd8o67avn7drWB5h1_YGI) | `python3 eval.py --data_name tgif --num_embeds 3 --img_attention --txt_attention --max_video_length 8 --legacy --ckpt ./ckpt/tgif_pvse.pth` |
 
 Using the pretrained models you should be able to reproduce the results in the table below
 
 | Dataset | Model | Image/Video-to-Text <br> R@1 / R@5 / R@10 / Med r (nMR) | Text-to-Image/Video <br> R@1 / R@5 / R@10 / Med r (nMR) |
 | - | - | - | - |
-| COCO 1K | PVSE (K=1) | 66.70 / 91.00 / 96.22 / 1 (0.00) | 53.49 / 85.14 / 92.70 / 1 (0.00) |
+| COCO 1K | PVSE (K=1) | 66.72 / 91.00 / 96.22 / 1 (0.00) | 53.49 / 85.14 / 92.70 / 1 (0.00) |
 | COCO 1K | PVSE | 69.24 / 91.62 / 96.64 / 1 (0.00) | 55.21 / 86.50 / 93.73 / 1 (0.00) |
 | COCO 5K | PVSE (K=1) | 41.72 / 72.96 / 82.90 / 2 (0.00) | 30.64 / 61.37 / 73.62 / 3 (0.00) |
 | COCO 5K | PVSE | 45.18 / 74.28 / 84.46 / 2 (0.00) | 32.42 / 62.97 / 74.96 / 3 (0.00)|

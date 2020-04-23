@@ -160,8 +160,11 @@ class EncoderVideo(nn.Module):
 
     embed_size, num_embeds, max_video_len = \
       opt.embed_size, opt.num_embeds, opt.max_video_length
+
+    self.embed_size = embed_size
     self.use_attention = opt.img_attention
     self.abs = True if hasattr(opt, 'order') and opt.order else False
+    self.legacy = opt.legacy
     
     # Backbone CNN
     self.cnn = get_cnn(opt.cnn_type, True)
@@ -194,10 +197,16 @@ class EncoderVideo(nn.Module):
     # Forward propagate RNN
     if torch.cuda.device_count() > 1:
       self.rnn.flatten_parameters()
-    
-    _, states = self.rnn(features)
-    # Reshape *final* output to (batch_size, hidden_size)
-    out = states.permute(1, 0, 2).contiguous().view(-1, self.embed_size)
+
+    # Use legacy mode to reproduce results in CVPR 2018 paper
+    if self.legacy:
+      states, _ = self.rnn(features)
+      states = self.dropout(states)
+      out = states[:, -1, :]
+    else:
+      _, states = self.rnn(features)
+      # Reshape *final* output to (batch_size, hidden_size)
+      out = states.permute(1, 0, 2).contiguous().view(-1, self.embed_size)
 
     out = self.dropout(out)
 
@@ -222,6 +231,7 @@ class EncoderText(nn.Module):
     self.embed_size = embed_size
     self.use_attention = opt.txt_attention
     self.abs = True if hasattr(opt, 'order') and opt.order else False
+    self.legacy = opt.legacy
 
     # Word embedding
     self.embed = nn.Embedding(len(word2idx), word_dim)
@@ -272,9 +282,16 @@ class EncoderText(nn.Module):
     if torch.cuda.device_count() > 1:
       self.rnn.flatten_parameters()
     
-    _, rnn_out = self.rnn(packed)
-    # Reshape *final* output to (batch_size, hidden_size)
-    rnn_out = rnn_out.permute(1, 0, 2).contiguous().view(-1, self.embed_size)
+    # Use legacy mode to reproduce results in CVPR 2018 paper
+    if self.legacy:
+      rnn_out, _ = self.rnn(packed)
+      padded = pad_packed_sequence(rnn_out, batch_first=True)
+      I = lengths.expand(self.embed_size, 1, -1).permute(2, 1, 0) - 1
+      rnn_out = torch.gather(padded[0], 1, I).squeeze(1) 
+    else:
+      _, rnn_out = self.rnn(packed)
+      # Reshape *final* output to (batch_size, hidden_size)
+      rnn_out = rnn_out.permute(1, 0, 2).contiguous().view(-1, self.embed_size)
 
     out = self.dropout(rnn_out)
 
