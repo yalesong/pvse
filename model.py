@@ -194,9 +194,11 @@ class EncoderVideo(nn.Module):
     # Forward propagate RNN
     if torch.cuda.device_count() > 1:
       self.rnn.flatten_parameters()
-    states, _ = self.rnn(features)
-    states = self.dropout(states)
-    out = states[:, -1, :]
+    
+    _, states = self.rnn(features)
+    # Reshape *final* output to (batch_size, hidden_size)
+    out = states.permute(1, 0, 2).contiguous().view(-1, self.embed_size)
+
     out = self.dropout(out)
 
     attn, residual = None, None
@@ -269,13 +271,12 @@ class EncoderText(nn.Module):
     packed = pack_padded_sequence(wemb_out, lengths, batch_first=True)
     if torch.cuda.device_count() > 1:
       self.rnn.flatten_parameters()
-    rnn_out, _ = self.rnn(packed)
-    padded = pad_packed_sequence(rnn_out, batch_first=True)
-
+    
+    _, rnn_out = self.rnn(packed)
     # Reshape *final* output to (batch_size, hidden_size)
-    I = lengths.expand(self.embed_size, 1, -1).permute(2, 1, 0) - 1
-    out = torch.gather(padded[0], 1, I).squeeze(1)
-    out = self.dropout(out)
+    rnn_out = rnn_out.permute(1, 0, 2).contiguous().view(-1, self.embed_size)
+
+    out = self.dropout(rnn_out)
 
     attn, residual = None, None
     if self.use_attention:
