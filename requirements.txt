@@ -5,7 +5,7 @@ pandas==0.23.4
 matplotlib==2.2.3
 pycocotools==2.0.0
 progressbar==2.5
-torch==1.1.0
+torch==1.13.1
 torchtext==0.2.3
 torchvision==0.3.0
 gulpio==540.66
